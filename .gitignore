@@ -1,4 +1,4 @@
-.gradle
+03_sinwoo/chap01-data-structure/.gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
