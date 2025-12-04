@@ -44,9 +44,37 @@ public class Application {
     }
 
     /* 로그 시간 O(log n)
-    *   -  입력 크기(n)가 증가할 때, 실행 시간이 로그 함수적으로 증가하는 경우를 의미
+    *   - 입력 크기(n)가 증가할 때, 실행 시간이 로그 함수적으로 증가하는 경우를 의미
+    *   - 주로 탐색 공간을 절반씩 줄여 나가며 탐색하는 알고리즘에서 나타남
+    *   - 이점: 입력이 커져도 효율적인 성능을 유지함
+    *
     * */
-    
+    private static int binarySearch(int[] arr, int target) {
+        /* 초기 세팅
+        *   - 배열의 요소가 오름차순 정렬이 되어있어야 한다.
+        * */
+
+        // 배열 원본 정렬, Arrays.sort()는 O(n log n)의 시간복잡도를 갖는다.
+        // 정렬시간 제외
+        Arrays.sort(arr);
+
+        // 탐색 시작(left), 끝(right) 인덱스를 가리키는 포인터
+        int left = 0;
+        int right = arr.length - 1;
+
+        while(left <= right) {
+            int mid = left + (right - left)/2;
+
+            if (arr[mid] == target) { // 1. 찾으려는 target이 mid과 같다면
+                return mid;
+            }if (arr[mid] < target) { // 2. 찾으려는 target이 중간보다 크다면 (mid 보다 오른쪽에 있을 경우)
+                left = mid + 1;
+            }else if (arr[mid] > target){ // 3. 찾으려는 target이 중간보다 작다면 (mid보다 왼쪽에 있을 경우)
+                right = mid - 1;
+            }
+        }
+
+    }
 
 
 
