@@ -76,6 +76,22 @@ public class Application {
         return -1;
     }
 
+    /* 지수 시간 O(2^n)
+    *   - 입력 크기(n)이 증가할 때 마다 2의 n제곱에 비례하여
+    *     시간이 기하급수적으로 증가하는 경우를 의미
+    * */
+
+    // fibonacci 수열에서 n번째 숫자 반환하기
+    private static int fibonacci(int n) {
+        // 0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181....
+        if (n <= 1) {
+            return n;
+        }else {
+            // 재귀 함수: 함수가 다시 자신을 호출하는 함수
+            return fibonacci(n-1) + fibonacci(n-2);
+        }
+    }
+
 
 
 
