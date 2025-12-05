@@ -51,7 +51,6 @@ public class MyArrayList<T> {
    * @param element
    */
   public void add(T element){
-
     // 1. data 배열이 가득 찼는지 확인
     if(data.length == size){
       // 2. 배열의 크기를 2배 증가 시키기
@@ -61,6 +60,107 @@ public class MyArrayList<T> {
     // 끝에 요소를 추가 후 size 1증가
     data[size++] = element;
   }
+
+
+  /**
+   * 지정된 인덱스에 요소 추가
+   * 시간 복잡도: O(n) - 삽입 위치 뒤의 모든 요소를 뒤로 한 칸씩 밀어야됨.
+   * @param index
+   * @param element
+   */
+  public void add(int index, T element){
+
+    // 1. index가 data 배열의 유효한 범위인지 확인
+    if(index < 0 || index > size){
+      throw new IndexOutOfBoundsException("인덱스 범위를 벗어났습니다.");
+    }
+
+    // 2. 배열이 가득 찼다면 사이즈 재조정
+    if(size == data.length) resize();
+
+    // 3. 전달 받은 element를 지정된 index에 추가
+    // 3-1. 지정된 index위치 부터 뒤로 한 칸씩 미루기
+    for(int i = size ; i > index ; i--){
+      data[i] = data[i-1];
+    }
+
+    // 3-2. 지정된 index에 element 대입하기
+    data[index] = element;
+    
+    // 4. size 1 증가
+    size++;
+  }
+
+  /**
+   * 지정된 인덱스 요소를 반환
+   * 시간 복잡도 : O(1)
+   * @param index
+   * @return 해당 인덱스 요소
+   * @throws IndexOutOfBoundsException 인덱스 범위를 벗어났습니다.
+   */
+  public T get(int index){
+
+    // 1. index가 data 배열의 유효한 범위인지 확인
+    if(index < 0 || index > size){
+      throw new IndexOutOfBoundsException("인덱스 범위를 벗어났습니다.");
+    }
+
+    // 2. 해당 인덱스 요소 반환
+    return data[index];
+  }
+
+  /**
+   * 저장된 요소의 개수 반환
+   * @return size
+   */
+  public int size(){
+    return size;
+  }
+
+  /**
+   * 리스트가 비어 있는지 확인
+   * @return 비어있으면 true, 아니면 false
+   */
+  public boolean isEmpty(){
+    return size == 0;
+  }
+
+
+  /**
+   * 지정된 인덱스의 요소를 리스트에서 제거하고
+   * 제거된 요소를 반환.
+   * 시간 복잡도 : O(n) - 제거된 요소 뒤 모든 요소를 한 칸씩 당겨야됨
+   * @param index 
+   * @return 제거된 요소
+   */
+  public T remove(int index){
+
+    // 1. index가 data 배열의 유효한 범위인지 확인
+    if(index < 0 || index > size){
+      throw new IndexOutOfBoundsException("인덱스 범위를 벗어났습니다.");
+    }
+
+    // 2. 제거될 요소를 임시 변수에 저장
+    T removedElement = data[index];
+
+    // 3. 제거된 위치 뒤의 요소를 한 칸씩 당김.
+    for(int i=index ; i<size-1 ; i++){
+      data[i] = data[i+1];
+    }
+
+    // 4. 마지막 요소를 null로 변경하고, size 1 감소
+    data[--size] = null;
+
+    // 5. 제거된 요소를 반환
+    return removedElement;
+
+  }
+
+  
+  
+
+
+
 
   /**
    * - 배열의 용량을 재조정하기 위한 헬퍼 메서드
@@ -79,9 +179,6 @@ public class MyArrayList<T> {
 
     // 4. data 참조 변수가 새 배열을 참조하도록 함.
     data = newData;
-
-
-
   }
   
 }
