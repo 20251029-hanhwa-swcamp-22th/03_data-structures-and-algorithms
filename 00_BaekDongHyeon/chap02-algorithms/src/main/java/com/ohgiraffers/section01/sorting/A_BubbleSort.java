@@ -37,7 +37,6 @@ public class A_BubbleSort {
 
       System.out.println((i+1) + "번째 : " + Arrays.toString(arr));
     }
-
   }
 
 }
