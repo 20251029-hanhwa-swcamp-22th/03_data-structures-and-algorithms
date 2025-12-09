@@ -1,4 +1,4 @@
-package com.google.section05.deque;
+package org.ho.section05.deque;
 
 
 /*

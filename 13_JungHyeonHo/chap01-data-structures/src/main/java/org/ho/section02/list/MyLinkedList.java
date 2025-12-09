@@ -1,4 +1,4 @@
-package com.google.section02.list;
+package org.ho.section02.list;
 
 /*
 * 단일 연결 리스트(Singly Linked List) 직접 구현하기

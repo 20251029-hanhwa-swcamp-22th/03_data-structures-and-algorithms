@@ -1,4 +1,4 @@
-package com.google.section04.queue;
+package org.ho.section04.queue;
 
 import java.util.LinkedList;
 import java.util.Queue;

@@ -1,4 +1,4 @@
-package com.google.section03.stack;
+package org.ho.section03.stack;
 
 import java.util.Stack;
 

@@ -1,4 +1,4 @@
-package com.google.section02.list;
+package org.ho.section02.list;
 
 /*
 * 배열 기반 동적 배열(ArrayList) 직접 구현한 클래스.
