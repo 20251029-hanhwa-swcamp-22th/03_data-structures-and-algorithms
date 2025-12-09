@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group = 'com.mins'
+group = 'com.ohgiraffers'
 version = '1.0-SNAPSHOT'
 
 repositories {
