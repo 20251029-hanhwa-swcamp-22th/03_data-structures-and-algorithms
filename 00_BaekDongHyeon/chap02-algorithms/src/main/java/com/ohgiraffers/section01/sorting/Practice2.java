@@ -8,7 +8,7 @@ import java.util.Arrays;
  * */
 public class Practice2 {
   // TimSort에서 사용할 RUN의 크기 (작은 배열은 삽입 정렬로 정렬)
-  private static final int RUN = 32;
+  private static final int RUN = 10;
 
   public static void timSort(int[] arr) {
     int n = arr.length;
