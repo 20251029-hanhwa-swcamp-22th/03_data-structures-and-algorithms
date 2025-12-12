@@ -1,7 +1,6 @@
 package com.kth.section03.greedy;
 
 import com.kth.section03.greedy.A_SugarDelivery;
-import com.kth.section04.dp.B_SugarDelivery;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
