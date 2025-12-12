@@ -1,7 +1,6 @@
-package com.kth.section03.greedy;
+package com.kth.section04.dp;
 
 import com.kth.section03.greedy.A_SugarDelivery;
-import com.kth.section04.dp.B_SugarDelivery;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -15,7 +14,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class A_SugarDeliveryTest {
+class B_SugarDeliveryTest {
   private static Integer input1, input2, input3;
   private static Integer output1, output2, output3;
 
@@ -44,7 +43,7 @@ class A_SugarDeliveryTest {
   @ParameterizedTest
   @MethodSource("provideSource")
   public void sugarDeliveryTest(Integer input, Integer output) throws Exception {
-    Integer result = A_SugarDelivery.solution(input);
+    Integer result = B_SugarDelivery.solution(input);
     Assertions.assertEquals(output, result);
   }
 }

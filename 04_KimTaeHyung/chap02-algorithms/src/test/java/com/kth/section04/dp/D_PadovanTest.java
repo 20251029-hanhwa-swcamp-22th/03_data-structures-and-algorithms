@@ -1,7 +1,6 @@
-package com.kth.section03.greedy;
+package com.kth.section04.dp;
 
-import com.kth.section03.greedy.A_SugarDelivery;
-import com.kth.section04.dp.B_SugarDelivery;
+import com.kth.section04.dp.D_Padovan;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -15,36 +14,33 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class A_SugarDeliveryTest {
-  private static Integer input1, input2, input3;
-  private static Integer output1, output2, output3;
+class D_PadovanTest {
+  private static Integer input1, input2;
+  private static Integer output1,output2;
 
   @BeforeAll
-  public static void setUp() {
+  static void set() {
 
-    input1 = 18;
-    output1 = 4;
-    input2 = 4;
-    output2 = -1;
-    input3 = 6;
-    output3 = 2;
+    input1 = 6;
+    output1 = 3;
 
+    input2 = 12;
+    output2 = 16;
   }
 
-  public static Stream<Arguments> provideSource() {
+  static Stream<Arguments> provideSource() {
     return Stream.of(
         arguments(input1, output1),
-        arguments(input2, output2),
-        arguments(input3, output3)
+        arguments(input2, output2)
     );
   }
 
-  @DisplayName("SugarDelivery")
+  @DisplayName("Padovan")
   @Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
   @ParameterizedTest
   @MethodSource("provideSource")
-  public void sugarDeliveryTest(Integer input, Integer output) throws Exception {
-    Integer result = A_SugarDelivery.solution(input);
+  void padovanTest(Integer input, Integer output) throws Exception {
+    Integer result = D_Padovan.solution(input);
     Assertions.assertEquals(output, result);
   }
 }
