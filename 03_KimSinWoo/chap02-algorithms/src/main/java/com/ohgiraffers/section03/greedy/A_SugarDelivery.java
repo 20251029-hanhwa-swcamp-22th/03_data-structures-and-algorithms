@@ -15,7 +15,6 @@ package com.ohgiraffers.section03.greedy;
 *   - 정확하게 N kg을 만들 수 없다면 -1 반환
 * */
 
-
 public class A_SugarDelivery {
 
     /**
@@ -23,48 +22,15 @@ public class A_SugarDelivery {
      * @param n 배달해야 하는 설탕의 무게
      * @return 최소 봉지의 수 (불가능한 경우 return -1)
      */
-
-
     public static int solution(int n) {
         int count = 0;
-
-//        /* n >= 10 */
-//        if (n >= 10) {
-//            count += (n / 10)*2;
-//            n %= 10;
-//            if(n % 3 == 0){
-//                count += n / 3;
-//            }else if(n == 5 || n == 8){
-//                count += 2;
-//            }else {
-//                count = -1;
-//            }
-//        }
-//
-//        /* 0 < n < 10 */
-//        else if (n >= 0 && n < 10) {
-//            if(n % 3 == 0){
-//                count += n / 3;
-//            }else if(n == 5 || n == 8){
-//                count += 2;
-//            }else {
-//                count = -1;
-//            }
-//        }
-
         /* while */
         while(true) {
             if (n % 5 == 0) return count += n/5;
-
             else if (n < 0) count = -1;
-
-            else if (n == 0) break;
-
+            else if (n == 0) return count;
             n -= 3;
             count++;
         }
-
-        return count;
     }
-
 }
