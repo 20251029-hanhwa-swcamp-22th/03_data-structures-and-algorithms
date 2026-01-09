@@ -26,7 +26,8 @@ public class A_BubbleSort {
     System.out.println("초기 값 : " + Arrays.toString(arr));
 
     // 버블이 처음 -> 끝 이동을 반복하는 루프
-    for (int i = 0; i < arr.length - 1; i++) { // 첫번째 for문 크게 몇 번 해야하나
+    for (int i = 0; i < arr.length - 1; i++) { // 첫번
+      // 째 for문 크게 몇 번 해야하나
       // 버블 이동 루프
       for (int j = 0; j < arr.length - i - 1; j++) { // 버블 계속 이동시키는 거 (버블 반복횟수 줄여나가기 )
         if (arr[j] > arr[j+1]) { // 왼쪽 요소가 큰 경우 Swap
